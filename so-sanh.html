@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="SmartBen - điện thoại, máy tính bảng chính hãng giá tốt cho học sinh, sinh viên." />
+    <meta name="author" content="Giáp Chí Thanh" />
+    <title>So sánh sản phẩm - SmartBen</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body data-trang="so-sanh">
+    <!-- Header, banner, footer được chèn bởi assets/js/giao-dien.js -->
+    <main class="sb-main">
+        <div class="container">
+            <section class="sb-card sb-page-head">
+                <div>
+                    <span class="sb-eyebrow"><i class="fas fa-balance-scale"></i> Công cụ</span>
+                    <h1>So sánh sản phẩm</h1>
+                    <p>Đặt tối đa 3 máy cạnh nhau để xem khác biệt về giá, cấu hình, pin và đánh giá. Ô màu xanh là thông số tốt nhất.</p>
+                </div>
+            </section>
+
+            <section class="sb-card sb-card-pad" id="khuSoSanh">
+                <div class="sb-box-head">
+                    <h3 class="mb-0"><i class="fas fa-balance-scale" style="color: var(--sb-primary);"></i> Bảng so sánh</h3>
+                    <div class="d-flex flex-wrap" style="gap: 8px;">
+                        <select class="sb-control" id="themMay" style="width: auto; min-width: min(230px, 100%); max-width: 100%;" aria-label="Thêm máy vào so sánh"></select>
+                        <button type="button" class="sb-btn sb-btn-outline sb-btn-sm" id="xoaHetSoSanh">Xoá hết</button>
+                    </div>
+                </div>
+                <div class="sb-table-wrap" id="bangSoSanh"></div>
+            </section>
+        </div>
+    </main>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/du-lieu-mau.js"></script>
+    <script src="assets/js/kho-du-lieu.js"></script>
+    <script src="assets/js/nghiep-vu.js"></script>
+    <script src="assets/js/giao-dien.js"></script>
+    <script src="assets/js/trang/so-sanh.js"></script>
+</body>
+</html>

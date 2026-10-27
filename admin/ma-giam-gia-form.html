@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="robots" content="noindex" />
+    <meta name="author" content="Giáp Chí Thanh" />
+    <title>Mã giảm giá - Quản trị SmartBen</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css" />
+</head>
+<body class="ad-body" data-goc="../" data-menu="ma-giam-gia">
+    <!-- Thanh bên + thanh trên được chèn bởi assets/js/admin.js -->
+    <div id="adNoiDung">
+        <div class="ad-head">
+            <div>
+                <a href="ma-giam-gia.html" class="text-muted" style="font-size: .88rem;"><i class="fas fa-arrow-left"></i> Danh sách mã</a>
+                <h1 id="tieuDeForm"></h1>
+                <p>Khách nhập mã ở bước Thanh toán; mỗi mã có điều kiện đơn tối thiểu, hạn dùng và số lượt riêng.</p>
+            </div>
+        </div>
+        <form id="formMa" novalidate>
+            <div class="ad-form-grid">
+                <div class="ad-panel">
+                    <div class="sb-field">
+                        <label for="ma">Mã <span class="req">*</span></label>
+                        <input class="sb-control" id="ma" name="ma" placeholder="VD: SMARTBEN10" autocomplete="off" style="text-transform: uppercase; font-weight: 800; letter-spacing: .05em;"
+                               data-bat-buoc="Vui lòng nhập mã" data-mau="^[A-Za-z0-9]{3,30}$" data-mau-loi="Mã dài 3–30 ký tự, chỉ gồm chữ không dấu và số, không có khoảng trắng" />
+                        <small class="text-muted">Chữ in hoa không dấu và số, không khoảng trắng. Mã được viết hoa tự động.</small>
+                        <span class="sb-error" data-loi-cho="ma"></span>
+                    </div>
+                    <div class="sb-field">
+                        <label for="moTa">Mô tả</label>
+                        <input class="sb-control" id="moTa" name="moTa" placeholder="VD: Giảm 10% cho đơn từ 200.000đ" data-nhieu-nhat="200" />
+                        <span class="sb-error" data-loi-cho="moTa"></span>
+                    </div>
+                    <div class="sb-field">
+                        <label>Loại giảm</label>
+                        <div class="form-row">
+                            <div class="col-sm-6">
+                                <label class="sb-pay-option mb-2 checked" for="loaiPhanTram">
+                                    <input type="radio" id="loaiPhanTram" name="loai" value="PhanTram" checked />
+                                    <span class="ico"><i class="fas fa-percent"></i></span>
+                                    <span><strong>Theo phần trăm</strong><small>Có thể đặt mức giảm tối đa</small></span>
+                                </label>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="sb-pay-option mb-2" for="loaiSoTien">
+                                    <input type="radio" id="loaiSoTien" name="loai" value="SoTien" />
+                                    <span class="ico"><i class="fas fa-money-bill-wave"></i></span>
+                                    <span><strong>Số tiền cố định</strong><small>Giảm thẳng vào tạm tính</small></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4 sb-field">
+                            <label for="giaTri" id="nhanGiaTri">Giá trị giảm</label>
+                            <input class="sb-control" id="giaTri" name="giaTri" type="number" min="1" step="1" data-bat-buoc="Vui lòng nhập giá trị giảm" data-so-tu="1" data-so-loi="Giá trị giảm phải lớn hơn 0" />
+                            <span class="sb-error" data-loi-cho="giaTri"></span>
+                        </div>
+                        <div class="col-md-4 sb-field" id="oGiamToiDa">
+                            <label for="giamToiDa">Giảm tối đa (đ)</label>
+                            <input class="sb-control" id="giamToiDa" name="giamToiDa" type="number" min="0" step="1000" placeholder="Không giới hạn" data-so-tu="0" data-so-loi="Giảm tối đa không được âm" />
+                            <span class="sb-error" data-loi-cho="giamToiDa"></span>
+                        </div>
+                        <div class="col-md-4 sb-field">
+                            <label for="donToiThieu">Đơn tối thiểu (đ)</label>
+                            <input class="sb-control" id="donToiThieu" name="donToiThieu" type="number" min="0" step="1000" data-so-tu="0" data-so-loi="Đơn tối thiểu không được âm" />
+                            <span class="sb-error" data-loi-cho="donToiThieu"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ad-panel">
+                    <div class="sb-field">
+                        <label for="soLuong">Số lượt sử dụng <small class="text-muted">(để trống = không giới hạn)</small></label>
+                        <input class="sb-control" id="soLuong" name="soLuong" type="number" min="1" step="1" placeholder="Không giới hạn" data-so-tu="1" data-so-loi="Số lượt phải lớn hơn 0" />
+                        <small class="text-muted" id="daDung"></small>
+                        <span class="sb-error" data-loi-cho="soLuong"></span>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-6 sb-field">
+                            <label for="ngayBatDau">Ngày bắt đầu</label>
+                            <input type="date" class="sb-control" id="ngayBatDau" name="ngayBatDau" />
+                            <span class="sb-error" data-loi-cho="ngayBatDau"></span>
+                        </div>
+                        <div class="col-6 sb-field">
+                            <label for="ngayKetThuc">Ngày kết thúc</label>
+                            <input type="date" class="sb-control" id="ngayKetThuc" name="ngayKetThuc" />
+                            <span class="sb-error" data-loi-cho="ngayKetThuc"></span>
+                        </div>
+                    </div>
+                    <label class="ad-switch mt-1" for="kichHoat"><input type="checkbox" id="kichHoat" name="kichHoat" /> Đang kích hoạt (khách dùng được ngay)</label>
+                </div>
+            </div>
+            <div class="ad-form-actions">
+                <a class="sb-btn sb-btn-outline" href="ma-giam-gia.html">Huỷ bỏ</a>
+                <button type="submit" class="sb-btn sb-btn-grad"><i class="fas fa-save"></i> Lưu mã giảm giá</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/du-lieu-mau.js"></script>
+    <script src="../assets/js/kho-du-lieu.js"></script>
+    <script src="../assets/js/nghiep-vu.js"></script>
+    <script src="../assets/js/giao-dien.js"></script>
+    <script src="../assets/js/admin.js"></script>
+    <script src="../assets/js/admin/ma-giam-gia.js"></script>
+</body>
+</html>

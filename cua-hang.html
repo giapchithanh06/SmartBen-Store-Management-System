@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="SmartBen - điện thoại, máy tính bảng chính hãng giá tốt cho học sinh, sinh viên." />
+    <meta name="author" content="Giáp Chí Thanh" />
+    <title>Sản phẩm - SmartBen</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body data-trang="cua-hang">
+    <!-- Header, banner, footer được chèn bởi assets/js/giao-dien.js -->
+    <main class="sb-main">
+        <div class="container">
+            <section class="sb-card sb-page-head">
+                <div>
+                    <span class="sb-eyebrow"><i class="fas fa-mobile-alt"></i> Cửa hàng SmartBen</span>
+                    <h1>Điện thoại &amp; máy tính bảng</h1>
+                    <p>Lọc theo hãng, khoảng giá, RAM hoặc ưu đãi. Bấm <i class="fas fa-balance-scale"></i> trên thẻ sản phẩm để so sánh tối đa 3 máy.</p>
+                </div>
+            </section>
+
+            <!-- BỘ LỌC + DANH SÁCH -->
+            <section class="sb-section sb-shop" id="danhSach" style="margin-top: 0;">
+                <form class="sb-card sb-filter" id="formLoc">
+                    <input type="hidden" name="tuKhoa" />
+                    <div class="sb-filter-head">
+                        <span><i class="fas fa-filter"></i> Bộ lọc<button type="button" class="sb-filter-toggle" id="moBoLoc" aria-expanded="false" aria-label="Mở bộ lọc"><i class="fas fa-chevron-down"></i></button></span>
+                        <a href="cua-hang.html#danhSach" id="xoaLoc" hidden><i class="fas fa-undo-alt"></i> Xoá lọc</a>
+                    </div>
+                    <div class="sb-filter-group">
+                        <label class="sb-label"><i class="fas fa-copyright"></i> Hãng</label>
+                        <select class="sb-control" name="hang" id="locHang" data-tu-ap-dung></select>
+                    </div>
+                    <div class="sb-filter-group">
+                        <label class="sb-label"><i class="fas fa-th-large"></i> Loại máy</label>
+                        <div class="sb-chip-list" id="chipLoai"></div>
+                    </div>
+                    <div class="sb-filter-group">
+                        <label class="sb-label"><i class="fas fa-tags"></i> Mức giá</label>
+                        <div class="sb-chip-list" id="chipGia"></div>
+                    </div>
+                    <div class="sb-filter-group">
+                        <label class="sb-label"><i class="fas fa-gift"></i> Ưu đãi</label>
+                        <div class="sb-chip-list" id="chipKhuyenMai"></div>
+                    </div>
+                    <div class="sb-filter-group">
+                        <label class="sb-label" for="locRam"><i class="fas fa-memory"></i> RAM tối thiểu</label>
+                        <select class="sb-control" name="ram" id="locRam" data-tu-ap-dung>
+                            <option value="">Không lọc</option><option value="2">Từ 2 GB</option><option value="3">Từ 3 GB</option>
+                            <option value="4">Từ 4 GB</option><option value="6">Từ 6 GB</option>
+                        </select>
+                    </div>
+                    <div class="sb-filter-group">
+                        <label class="sb-label" for="locSao"><i class="fas fa-star"></i> Đánh giá</label>
+                        <select class="sb-control" name="sao" id="locSao" data-tu-ap-dung>
+                            <option value="">Tất cả</option><option value="3">Từ 3 sao</option><option value="4">Từ 4 sao</option><option value="4.5">Từ 4,5 sao</option>
+                        </select>
+                    </div>
+                    <div class="sb-filter-group">
+                        <label class="sb-check" for="conHang">
+                            <input type="checkbox" id="conHang" name="conHang" value="true" data-tu-ap-dung />
+                            <span>Chỉ hiện máy còn hàng</span>
+                        </label>
+                    </div>
+                </form>
+
+                <div style="min-width: 0;">
+                    <div class="sb-toolbar">
+                        <div class="mr-auto">
+                            <span class="sb-eyebrow" id="nhanDanhSach">Danh sách sản phẩm</span>
+                            <h2 id="tieuDeDanhSach">Tất cả sản phẩm</h2>
+                        </div>
+                        <span class="sb-count-pill"><i class="fas fa-mobile-alt" style="color: var(--sb-primary);"></i> <b id="tongSo">0</b> sản phẩm</span>
+                        <select id="sapXep" class="sb-control" style="width: auto;" aria-label="Sắp xếp"></select>
+                    </div>
+                    <div class="sb-active-filters" id="locDangDung"></div>
+                    <div id="dsSanPham"></div>
+                    <ul class="sb-pagination" id="phanTrang" aria-label="Phân trang"></ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/du-lieu-mau.js"></script>
+    <script src="assets/js/kho-du-lieu.js"></script>
+    <script src="assets/js/nghiep-vu.js"></script>
+    <script src="assets/js/giao-dien.js"></script>
+    <script src="assets/js/trang/cua-hang.js"></script>
+</body>
+</html>

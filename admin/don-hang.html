@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="robots" content="noindex" />
+    <meta name="author" content="Giáp Chí Thanh" />
+    <title>Đơn hàng - Quản trị SmartBen</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css" />
+</head>
+<body class="ad-body" data-goc="../" data-menu="don-hang">
+    <!-- Thanh bên + thanh trên được chèn bởi assets/js/admin.js -->
+    <div id="adNoiDung">
+        <div class="ad-head">
+            <div><span class="sb-eyebrow">Bán hàng</span><h1>Quản lý đơn hàng</h1><p id="moTaTrang">Lọc theo trạng thái, tìm theo mã đơn, tên hoặc số điện thoại.</p></div>
+            <a class="sb-btn sb-btn-soft" id="boLocKhach" href="don-hang.html" hidden><i class="fas fa-times"></i> Bỏ lọc khách hàng</a>
+        </div>
+        <section class="ad-panel">
+            <div class="ad-tabs" id="tabTrangThai"></div>
+            <form class="ad-filter-bar" id="formTimDon" method="get" action="don-hang.html">
+                <input type="hidden" name="trangThai" />
+                <input type="hidden" name="taiKhoanId" />
+                <input type="search" class="sb-control" name="tuKhoa" placeholder="Mã đơn (FB00012), tên hoặc số điện thoại..." aria-label="Tìm đơn hàng" />
+                <button type="submit" class="sb-btn sb-btn-grad"><i class="fas fa-search"></i> Tìm</button>
+            </form>
+            <div id="bangDon"></div>
+            <ul class="sb-pagination" id="phanTrangDon"></ul>
+        </section>
+    </div>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/du-lieu-mau.js"></script>
+    <script src="../assets/js/kho-du-lieu.js"></script>
+    <script src="../assets/js/nghiep-vu.js"></script>
+    <script src="../assets/js/giao-dien.js"></script>
+    <script src="../assets/js/admin.js"></script>
+    <script src="../assets/js/admin/don-hang.js"></script>
+</body>
+</html>

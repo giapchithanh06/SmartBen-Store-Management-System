@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="robots" content="noindex" />
+    <meta name="author" content="Giáp Chí Thanh" />
+    <title>Sản phẩm - Quản trị SmartBen</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css" />
+</head>
+<body class="ad-body" data-goc="../" data-menu="san-pham">
+    <!-- Thanh bên + thanh trên được chèn bởi assets/js/admin.js -->
+    <div id="adNoiDung">
+        <div class="ad-head">
+            <div>
+                <a href="san-pham.html" class="text-muted" style="font-size: .88rem;"><i class="fas fa-arrow-left"></i> Danh sách sản phẩm</a>
+                <h1 id="tieuDeForm"></h1>
+                <p id="moTaForm"></p>
+            </div>
+            <a class="sb-btn sb-btn-soft" id="xemTrenCuaHang" href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Xem trên cửa hàng</a>
+        </div>
+        <form id="formSanPham" novalidate>
+            <div class="ad-form-grid">
+                <div class="ad-panel">
+                    <div class="form-row">
+                        <div class="col-md-6 sb-field">
+                            <label for="ten">Tên sản phẩm <span class="req">*</span></label>
+                            <input class="sb-control" id="ten" name="ten" placeholder="VD: Samsung Galaxy A50" data-bat-buoc="Vui lòng nhập tên sản phẩm" data-nhieu-nhat="150" />
+                            <span class="sb-error" data-loi-cho="ten"></span>
+                        </div>
+                        <div class="col-md-3 sb-field">
+                            <label for="hang">Hãng <span class="req">*</span></label>
+                            <input class="sb-control" id="hang" name="hang" list="dsHang" placeholder="Samsung" data-bat-buoc="Vui lòng nhập hãng" data-nhieu-nhat="40" />
+                            <datalist id="dsHang"></datalist>
+                            <span class="sb-error" data-loi-cho="hang"></span>
+                        </div>
+                        <div class="col-md-3 sb-field">
+                            <label for="ma">Mã máy</label>
+                            <input class="sb-control" id="ma" name="ma" placeholder="Tự tạo nếu để trống" data-nhieu-nhat="20" />
+                            <span class="sb-error" data-loi-cho="ma"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 sb-field">
+                            <label for="loai">Loại máy <span class="req">*</span></label>
+                            <select class="sb-control" id="loai" name="loai" data-bat-buoc="Vui lòng chọn loại">
+                                <option value="">-- Chọn loại --</option><option>Điện thoại thông minh</option><option>Điện thoại phổ thông</option><option>Máy tính bảng</option>
+                            </select>
+                            <span class="sb-error" data-loi-cho="loai"></span>
+                        </div>
+                        <div class="col-md-6 sb-field">
+                            <label for="khuyenMai">Nhãn khuyến mãi</label>
+                            <select class="sb-control" id="khuyenMai" name="khuyenMai">
+                                <option value="">Không có</option><option value="giamgia">Đang giảm giá (cần giá cũ)</option><option value="giareonline">Giá rẻ online (cần giá cũ)</option>
+                                <option value="tragop">Trả góp 0%</option><option value="moiramat">Mới ra mắt</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4 sb-field">
+                            <label for="gia">Giá bán (đ) <span class="req">*</span></label>
+                            <input class="sb-control" id="gia" name="gia" type="number" step="10000" min="10000" placeholder="5990000" data-bat-buoc="Vui lòng nhập giá bán" data-so-tu="10000" data-so-loi="Giá bán tối thiểu 10.000đ" />
+                            <span class="sb-error" data-loi-cho="gia"></span>
+                        </div>
+                        <div class="col-md-4 sb-field">
+                            <label for="giaCu">Giá niêm yết cũ (đ)</label>
+                            <input class="sb-control" id="giaCu" name="giaCu" type="number" step="10000" min="0" placeholder="Để trống nếu không giảm" />
+                            <span class="sb-error" data-loi-cho="giaCu"></span>
+                        </div>
+                        <div class="col-md-4 sb-field">
+                            <label for="ton">Tồn kho (máy) <span class="req">*</span></label>
+                            <input class="sb-control" id="ton" name="ton" type="number" step="1" min="0" data-bat-buoc="Vui lòng nhập tồn kho" data-so-tu="0" data-so-loi="Tồn kho không được âm" />
+                            <span class="sb-error" data-loi-cho="ton"></span>
+                        </div>
+                    </div>
+                    <div class="sb-note-box mb-3" id="xemGiam" hidden><i class="fas fa-fire" style="color: var(--sb-red);"></i> Sản phẩm sẽ hiện giá gạch và giảm <b id="phanTramGiam"></b>.</div>
+                    <fieldset class="mb-2">
+                        <legend style="font-size: 1rem; font-weight: 700;"><i class="fas fa-microchip" style="color: var(--sb-primary);"></i> Thông số kỹ thuật</legend>
+                        <div class="form-row" id="oThongSo"></div>
+                    </fieldset>
+                    <div class="sb-field">
+                        <label for="moTa">Mô tả</label>
+                        <textarea class="sb-control" id="moTa" name="moTa" rows="5" placeholder="Điểm nổi bật: thiết kế, camera, pin, hiệu năng..." data-nhieu-nhat="1000"></textarea>
+                        <span class="sb-error" data-loi-cho="moTa"></span>
+                    </div>
+                    <label class="ad-switch" for="conHang"><input type="checkbox" id="conHang" name="conHang" /> Đang mở bán trên website</label>
+                </div>
+                <div class="ad-panel">
+                    <label class="font-weight-bold">Ảnh chính <span class="req">*</span></label>
+                    <div class="ad-preview"><img id="anhXemTruoc" alt="Ảnh sản phẩm" hidden /><i class="far fa-image" id="iconTrong"></i></div>
+                    <div class="sb-field mt-3">
+                        <input type="file" name="fileAnh" accept="image/*" class="form-control-file" />
+                        <small class="text-muted d-block mt-1">Ảnh được thu nhỏ và lưu ngay trong trình duyệt.</small>
+                        <label for="tenFileAnh" class="mt-2" style="font-size: .82rem;">Hoặc tên file trong <code>assets/img/products/</code> / đường link ảnh</label>
+                        <input class="sb-control" id="tenFileAnh" name="tenFileAnh" style="height: 40px;" placeholder="vd: oppo-a3s-32gb-600x600.jpg hoặc link https://..." />
+                    </div>
+                    <label class="font-weight-bold">Ảnh phụ <small class="text-muted">(thư viện ảnh ở trang chi tiết)</small></label>
+                    <div class="ad-thumbs mb-2" id="dsAnhPhu"></div>
+                    <input type="file" name="fileAnhPhu" multiple accept="image/*" class="form-control-file" />
+                    <small class="text-muted d-block mt-1">Chọn nhiều ảnh cùng lúc (tối đa 6 ảnh/lần).</small>
+                </div>
+            </div>
+            <div class="ad-form-actions">
+                <a class="sb-btn sb-btn-outline" href="san-pham.html">Huỷ bỏ</a>
+                <button type="submit" class="sb-btn sb-btn-grad"><i class="fas fa-save"></i> Lưu sản phẩm</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/du-lieu-mau.js"></script>
+    <script src="../assets/js/kho-du-lieu.js"></script>
+    <script src="../assets/js/nghiep-vu.js"></script>
+    <script src="../assets/js/giao-dien.js"></script>
+    <script src="../assets/js/admin.js"></script>
+    <script src="../assets/js/admin/san-pham.js"></script>
+</body>
+</html>

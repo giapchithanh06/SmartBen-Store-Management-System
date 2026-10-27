@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="SmartBen - điện thoại, máy tính bảng chính hãng giá tốt cho học sinh, sinh viên." />
+    <meta name="author" content="Giáp Chí Thanh" />
+    <title>Trang chủ - SmartBen</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body data-trang="trang-chu">
+    <!-- Header, banner, footer được chèn bởi assets/js/giao-dien.js -->
+    <main class="sb-main">
+        <div class="container">
+            <!-- 1. HERO: chữ bên trái, sản phẩm nổi bật xoay vòng bên phải -->
+            <section class="sb-hero2">
+                <div>
+                    <span class="sb-eyebrow" style="color: #FFB27D;"><i class="fas fa-bolt"></i> Chính hãng · Giá sinh viên</span>
+                    <h1>Điện thoại xịn,<br /><span>giá hợp túi tiền</span></h1>
+                    <p>SmartBen chọn sẵn những mẫu điện thoại, máy tính bảng đáng tiền nhất cho học sinh, sinh viên. Bảo hành 12 tháng, trả góp 0%, giao nhanh toàn quốc.</p>
+                    <div class="sb-hero-actions">
+                        <a class="sb-btn sb-btn-grad sb-btn-lg" href="cua-hang.html">Xem sản phẩm <i class="fas fa-arrow-right"></i></a>
+                        <a class="sb-btn sb-btn-outline sb-btn-lg" href="cua-hang.html?giaDen=5000000&amp;sapXep=danhgia"><i class="fas fa-graduation-cap"></i> Góc sinh viên</a>
+                    </div>
+                    <div class="sb-hero-chips">
+                        <span><i class="fas fa-shield-alt"></i> Bảo hành 12 tháng</span>
+                        <span><i class="fas fa-percent"></i> Trả góp 0%</span>
+                        <span><i class="fas fa-undo-alt"></i> Đổi trả 30 ngày</span>
+                    </div>
+                </div>
+                <div class="sb-stage" aria-label="Sản phẩm nổi bật">
+                    <div class="sb-slider" id="sanKhau" aria-roledescription="carousel"><div class="sb-dots"></div></div>
+                    <div class="sb-stage-badge" id="sanKhauGiam" hidden></div>
+                    <a class="sb-stage-card" id="sanKhauThe" href="cua-hang.html"><small>Đang được quan tâm</small><b></b><span class="sb-price"></span></a>
+                </div>
+            </section>
+
+            <!-- 2. CAM KẾT -->
+            <section class="sb-features">
+                <div class="sb-feature"><i class="fas fa-certificate"></i><div><strong>Hàng chính hãng</strong><span>Đầy đủ hoá đơn VAT</span></div></div>
+                <div class="sb-feature"><i class="fas fa-shipping-fast"></i><div><strong>Giao nhanh</strong><span>Miễn phí từ <span data-cau-hinh="MIEN_PHI_TU"></span></span></div></div>
+                <div class="sb-feature"><i class="fas fa-undo-alt"></i><div><strong>Đổi trả 30 ngày</strong><span>Lỗi là đổi máy mới</span></div></div>
+                <div class="sb-feature"><i class="fas fa-headset"></i><div><strong>Hỗ trợ 8h – 21h30</strong><span>Hotline <span data-cau-hinh="HOTLINE"></span></span></div></div>
+            </section>
+
+            <!-- 3. MUA THEO NHU CẦU -->
+            <section class="sb-section reveal">
+                <div class="sb-section-head">
+                    <div><span class="sb-eyebrow">Mua theo nhu cầu</span><h2>Bạn cần máy để làm gì?</h2></div>
+                </div>
+                <div class="sb-needs">
+                    <a class="sb-need" href="cua-hang.html?giaDen=5000000&amp;sapXep=danhgia"><i class="fas fa-graduation-cap"></i><strong>Học tập, sinh viên</strong><span>Pin trâu, màn lớn, giá dưới 5 triệu.</span><em id="demSinhVien"></em></a>
+                    <a class="sb-need" href="cua-hang.html?khuyenMai=tragop"><i class="fas fa-percent"></i><strong>Trả góp 0%</strong><span>Lãi suất 0%, chỉ cần CMND/CCCD.</span><em id="demTraGop"></em></a>
+                    <a class="sb-need" href="cua-hang.html?ram=4&amp;sapXep=giagiam"><i class="fas fa-camera-retro"></i><strong>Chụp ảnh, chơi game</strong><span>RAM từ 4GB, camera kép sắc nét.</span><em id="demCauHinh"></em></a>
+                    <a class="sb-need" href="cua-hang.html?loai=%C4%90i%E1%BB%87n%20tho%E1%BA%A1i%20ph%E1%BB%95%20th%C3%B4ng"><i class="fas fa-phone"></i><strong>Nghe gọi cho bố mẹ</strong><span>Máy phổ thông bền, pin cả tuần.</span><em id="demPhoThong"></em></a>
+                </div>
+            </section>
+
+            <!-- 4. NỔI BẬT -->
+            <section class="sb-section reveal">
+                <div class="sb-section-head">
+                    <div><span class="sb-eyebrow">Được yêu thích</span><h2>Sản phẩm nổi bật</h2></div>
+                    <a class="sb-btn sb-btn-grad" href="cua-hang.html?sapXep=danhgia">Xem thêm</a>
+                </div>
+                <div class="sb-products" id="dsNoiBat"></div>
+            </section>
+
+            <!-- 5. KHUYẾN MÃI (lấy từ mã giảm giá đang dùng được) -->
+            <section class="sb-section reveal" id="khuKhuyenMai">
+                <div class="sb-promo">
+                    <div>
+                        <span class="sb-eyebrow"><i class="fas fa-ticket-alt"></i> Ưu đãi cho sinh viên</span>
+                        <h2></h2>
+                        <p></p>
+                        <span class="sb-voucher-chip"><i class="fas fa-ticket-alt"></i> <span></span></span>
+                    </div>
+                    <a class="sb-btn sb-btn-white sb-btn-lg" href="cua-hang.html">Mua ngay <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </section>
+
+            <!-- 6. CÁC KHU THEO KHUYẾN MÃI (dải ngang cuộn) -->
+            <div id="khuTheoNhom"></div>
+
+            <!-- 7. VỀ SMARTBEN + SỐ LIỆU -->
+            <section class="sb-section reveal">
+                <div class="sb-card sb-about-mini">
+                    <div>
+                        <span class="sb-eyebrow">Về SmartBen</span>
+                        <h2>Mua điện thoại không còn là chuyện đau đầu</h2>
+                        <p>SmartBen lọc sẵn thông số, so sánh giúp bạn những mẫu cùng tầm giá và hiển thị đánh giá thật từ người đã mua. Không quảng cáo nhảy ra, không ép mua thêm – chỉ cần chọn máy hợp với bạn.</p>
+                        <a class="sb-btn sb-btn-grad" href="gioi-thieu.html">Tìm hiểu thêm <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="sb-stats">
+                        <div class="sb-stat"><strong id="tkSanPham">0</strong><span>Mẫu máy</span></div>
+                        <div class="sb-stat"><strong id="tkHang">0</strong><span>Thương hiệu</span></div>
+                        <div class="sb-stat"><strong id="tkKhach">0</strong><span>Khách hàng</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. TIN TỨC -->
+            <section class="sb-section reveal" id="khuTinTuc">
+                <div class="sb-section-head">
+                    <div><span class="sb-eyebrow">Góc công nghệ</span><h2>Tin tức &amp; mẹo chọn máy</h2></div>
+                    <a class="sb-btn sb-btn-soft" href="tin-tuc.html">Xem tất cả</a>
+                </div>
+                <div class="sb-news" id="dsTinMoi"></div>
+            </section>
+        </div>
+    </main>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/du-lieu-mau.js"></script>
+    <script src="assets/js/kho-du-lieu.js"></script>
+    <script src="assets/js/nghiep-vu.js"></script>
+    <script src="assets/js/giao-dien.js"></script>
+    <script src="assets/js/trang/trang-chu.js"></script>
+</body>
+</html>

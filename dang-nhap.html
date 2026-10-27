@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="SmartBen - điện thoại, máy tính bảng chính hãng giá tốt cho học sinh, sinh viên." />
+    <meta name="author" content="Giáp Chí Thanh" />
+    <title>Đăng nhập - SmartBen</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body data-trang="dang-nhap" data-banner="Chào mừng trở lại" data-banner-tieu-de="Đăng nhập vào tài khoản">
+    <!-- Header, banner, footer được chèn bởi assets/js/giao-dien.js -->
+    <main class="sb-main">
+        <div class="container">
+            <section class="sb-card sb-auth">
+                <div class="sb-auth-side" style="background-image: url('assets/img/tintuc/tintuc5.png');">
+                    <span class="sb-eyebrow">Thành viên SmartBen</span>
+                    <h2>Chào mừng bạn quay lại</h2>
+                    <p>Đăng nhập để theo dõi đơn hàng, tự điền địa chỉ giao hàng và nhận mã giảm giá dành riêng cho bạn.</p>
+                </div>
+                <div class="sb-auth-form">
+                    <span class="sb-eyebrow"><i class="fas fa-lock"></i> Đăng nhập</span>
+                    <h1>Đăng nhập tài khoản</h1>
+                    <p class="text-muted">Chưa có tài khoản? <a href="dang-ky.html" id="linkDangKy" class="font-weight-bold">Đăng ký ngay</a></p>
+                    <form id="formDangNhap" novalidate>
+                        <div class="sb-note-box mb-3" id="loiChung" style="background: var(--sb-red-soft); border-left-color: var(--sb-red); color: var(--sb-red); font-weight: 600;" hidden></div>
+                        <div class="sb-field">
+                            <label for="email">Email</label>
+                            <div class="sb-input-icon"><i class="far fa-envelope"></i>
+                                <input class="sb-control" id="email" name="email" type="email" placeholder="ban@gmail.com" autocomplete="username" autofocus data-bat-buoc="Vui lòng nhập email" data-email="Email không đúng định dạng" />
+                            </div>
+                            <span class="sb-error" data-loi-cho="email"></span>
+                        </div>
+                        <div class="sb-field">
+                            <label for="matKhau">Mật khẩu</label>
+                            <div class="sb-input-icon" style="position: relative;"><i class="fas fa-lock"></i>
+                                <input class="sb-control" id="matKhau" name="matKhau" type="password" placeholder="Mật khẩu" autocomplete="current-password" data-bat-buoc="Vui lòng nhập mật khẩu" />
+                                <button type="button" class="sb-pass-toggle" data-toggle-pass="matKhau" aria-label="Hiện mật khẩu"><i class="far fa-eye"></i></button>
+                            </div>
+                            <span class="sb-error" data-loi-cho="matKhau"></span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap" style="gap: 8px;">
+                            <label class="sb-check" for="ghiNho"><input type="checkbox" id="ghiNho" name="ghiNho" /> Ghi nhớ đăng nhập 30 ngày</label>
+                        </div>
+                        <button type="submit" class="sb-btn sb-btn-grad sb-btn-lg sb-btn-block">Đăng nhập <i class="fas fa-arrow-right"></i></button>
+                        <div class="sb-divider">hoặc</div>
+                        <a class="sb-btn sb-btn-soft sb-btn-block" href="cua-hang.html">Mua hàng không cần tài khoản</a>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/du-lieu-mau.js"></script>
+    <script src="assets/js/kho-du-lieu.js"></script>
+    <script src="assets/js/nghiep-vu.js"></script>
+    <script src="assets/js/giao-dien.js"></script>
+    <script src="assets/js/trang/dang-nhap.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="robots" content="noindex" />
+    <meta name="author" content="Giáp Chí Thanh" />
+    <title>Tổng quan - Quản trị SmartBen</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css" />
+</head>
+<body class="ad-body" data-goc="../" data-menu="tong-quan">
+    <!-- Thanh bên + thanh trên được chèn bởi assets/js/admin.js -->
+    <div id="adNoiDung">
+        <section class="ad-hero">
+            <span class="sb-eyebrow">SmartBen · Trang quản trị</span>
+            <h1 id="chao"></h1>
+            <p>Theo dõi doanh thu, đơn hàng, tồn kho, mã giảm giá và tin tức trên cùng một bảng điều khiển.</p>
+            <div class="d-flex flex-wrap" style="gap: 10px;">
+                <a class="sb-btn sb-btn-grad" id="nutDonMoi" href="don-hang.html"><i class="fas fa-receipt"></i> Xử lý đơn mới</a>
+                <a class="sb-btn sb-btn-white" href="san-pham-form.html"><i class="fas fa-plus"></i> Thêm sản phẩm</a>
+                <a class="sb-btn sb-btn-white" href="tin-tuc-form.html"><i class="fas fa-pen"></i> Viết tin mới</a>
+            </div>
+        </section>
+
+        <section class="ad-stats" id="theThongKe"></section>
+
+        <section class="ad-grid">
+            <div class="ad-panel">
+                <div class="ad-panel-head">
+                    <div><span class="sb-eyebrow">Doanh thu</span><h2 id="tong7Ngay"></h2></div>
+                    <a class="sb-btn sb-btn-soft sb-btn-sm" href="bao-cao.html"><i class="fas fa-chart-line"></i> Báo cáo chi tiết</a>
+                </div>
+                <div class="ad-chart" id="bieuDo" role="img" aria-label="Biểu đồ doanh thu 7 ngày, không tính đơn huỷ"></div>
+                <div class="ad-chart-labels" id="nhanBieuDo"></div>
+            </div>
+            <div class="ad-panel">
+                <div class="ad-panel-head"><div><span class="sb-eyebrow">Bán chạy</span><h2>Top sản phẩm</h2></div></div>
+                <div id="topBanChay"></div>
+            </div>
+        </section>
+
+        <section class="ad-grid">
+            <div class="ad-panel">
+                <div class="ad-panel-head">
+                    <div><span class="sb-eyebrow">Đơn hàng</span><h2>Đơn gần đây</h2></div>
+                    <a class="sb-btn sb-btn-soft sb-btn-sm" href="don-hang.html">Xem tất cả</a>
+                </div>
+                <div id="donGanDay"></div>
+            </div>
+            <div class="ad-panel">
+                <div class="ad-panel-head"><div><span class="sb-eyebrow">Tồn kho</span><h2 id="tieuDeSapHet"></h2></div></div>
+                <div id="sapHet"></div>
+            </div>
+        </section>
+
+        <section class="ad-grid deu">
+            <div class="ad-panel">
+                <div class="ad-panel-head">
+                    <div><span class="sb-eyebrow">Khách hàng</span><h2>Đăng ký gần đây</h2></div>
+                    <a class="sb-btn sb-btn-soft sb-btn-sm" href="khach-hang.html">Xem tất cả</a>
+                </div>
+                <div id="khachMoi"></div>
+            </div>
+            <div class="ad-panel">
+                <div class="ad-panel-head"><div><span class="sb-eyebrow">Cần xử lý</span><h2>Việc hôm nay</h2></div></div>
+                <div class="ad-list" id="viecHomNay"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/du-lieu-mau.js"></script>
+    <script src="../assets/js/kho-du-lieu.js"></script>
+    <script src="../assets/js/nghiep-vu.js"></script>
+    <script src="../assets/js/giao-dien.js"></script>
+    <script src="../assets/js/admin.js"></script>
+    <script src="../assets/js/admin/tong-quan.js"></script>
+</body>
+</html>

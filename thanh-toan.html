@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="SmartBen - điện thoại, máy tính bảng chính hãng giá tốt cho học sinh, sinh viên." />
+    <meta name="author" content="Giáp Chí Thanh" />
+    <title>Thanh toán - SmartBen</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body data-trang="thanh-toan">
+    <!-- Header, banner, footer được chèn bởi assets/js/giao-dien.js -->
+    <main class="sb-main">
+        <div class="container">
+            <section class="sb-card sb-page-head">
+                <div>
+                    <span class="sb-eyebrow"><i class="fas fa-credit-card"></i> Thanh toán SmartBen</span>
+                    <h1>Thanh toán đơn hàng</h1>
+                    <p>Điền thông tin giao hàng, chọn cách thanh toán và xác nhận đơn.</p>
+                </div>
+                <a class="sb-btn sb-btn-soft" href="gio-hang.html"><i class="fas fa-arrow-left"></i> Quay lại giỏ hàng</a>
+            </section>
+
+            <div class="sb-steps">
+                <div class="sb-step xong"><span class="so"><i class="fas fa-check"></i></span><div><strong>Giỏ hàng</strong><small id="buocGio"></small></div></div>
+                <div class="sb-step hien-tai"><span class="so">2</span><div><strong>Thông tin</strong><small>Giao hàng &amp; thanh toán</small></div></div>
+                <div class="sb-step"><span class="so">3</span><div><strong>Hoàn tất</strong><small>Xác nhận đơn</small></div></div>
+            </div>
+
+            <form id="formThanhToan" novalidate>
+                <div class="sb-checkout">
+                    <div style="min-width: 0;">
+                        <!-- THÔNG TIN NGƯỜI NHẬN -->
+                        <section class="sb-card sb-card-pad mb-4">
+                            <div class="sb-box-head"><h3>Thông tin người nhận</h3><span class="sb-box-icon"><i class="fas fa-user"></i></span></div>
+                            <div class="sb-field">
+                                <label for="hoTenNguoiNhan">Họ và tên <span class="req">*</span></label>
+                                <div class="sb-input-icon"><i class="far fa-user"></i>
+                                    <input class="sb-control" id="hoTenNguoiNhan" name="hoTenNguoiNhan" placeholder="Nguyễn Văn A" autocomplete="name" data-bat-buoc="Vui lòng nhập họ tên người nhận!" data-nhieu-nhat="100" />
+                                </div>
+                                <span class="sb-error" data-loi-cho="hoTenNguoiNhan"></span>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6 sb-field">
+                                    <label for="soDienThoai">Số điện thoại <span class="req">*</span></label>
+                                    <div class="sb-input-icon"><i class="fas fa-phone"></i>
+                                        <input class="sb-control" id="soDienThoai" name="soDienThoai" placeholder="0901234567" inputmode="tel" autocomplete="tel" data-bat-buoc="Vui lòng nhập số điện thoại!" data-mau="^0\d{9}$" data-mau-loi="Số điện thoại phải đủ 10 chữ số và bắt đầu bằng số 0!" />
+                                    </div>
+                                    <span class="sb-error" data-loi-cho="soDienThoai"></span>
+                                </div>
+                                <div class="col-md-6 sb-field">
+                                    <label for="email">Email <small class="text-muted">(không bắt buộc)</small></label>
+                                    <div class="sb-input-icon"><i class="far fa-envelope"></i>
+                                        <input class="sb-control" id="email" name="email" type="email" placeholder="ban@gmail.com" autocomplete="email" data-email="Email không đúng định dạng." />
+                                    </div>
+                                    <span class="sb-error" data-loi-cho="email"></span>
+                                </div>
+                            </div>
+                            <div class="sb-field mb-0">
+                                <label for="ghiChu">Ghi chú <small class="text-muted">(không bắt buộc)</small></label>
+                                <div class="sb-input-icon textarea"><i class="far fa-comment-dots"></i>
+                                    <textarea class="sb-control" id="ghiChu" name="ghiChu" rows="2" placeholder="Ví dụ: giao giờ hành chính, gọi trước khi giao..." data-nhieu-nhat="500"></textarea>
+                                </div>
+                                <span class="sb-error" data-loi-cho="ghiChu"></span>
+                            </div>
+                        </section>
+
+                        <!-- ĐỊA CHỈ GIAO HÀNG -->
+                        <section class="sb-card sb-card-pad mb-4">
+                            <div class="sb-box-head"><h3>Địa chỉ giao hàng</h3><span class="sb-box-icon"><i class="fas fa-map-marker-alt"></i></span></div>
+                            <div class="form-row">
+                                <div class="col-md-6 sb-field">
+                                    <label for="tinhThanh">Tỉnh / Thành phố <span class="req">*</span></label>
+                                    <select class="sb-control" id="tinhThanh" name="tinhThanh" data-bat-buoc="Vui lòng chọn tỉnh / thành phố!"></select>
+                                    <span class="sb-error" data-loi-cho="tinhThanh"></span>
+                                </div>
+                                <div class="col-md-6 sb-field">
+                                    <label for="phuongXa">Phường / Xã <span class="req">*</span></label>
+                                    <select class="sb-control" id="phuongXa" name="phuongXa" data-bat-buoc="Vui lòng chọn phường / xã!"></select>
+                                    <span class="sb-error" data-loi-cho="phuongXa"></span>
+                                </div>
+                            </div>
+                            <div class="sb-field">
+                                <label for="diaChiGiao">Địa chỉ chi tiết <span class="req">*</span></label>
+                                <div class="sb-input-icon"><i class="fas fa-home"></i>
+                                    <input class="sb-control" id="diaChiGiao" name="diaChiGiao" placeholder="Số nhà, tên đường, tòa nhà..." autocomplete="street-address" data-bat-buoc="Vui lòng nhập số nhà, tên đường!" data-nhieu-nhat="250" />
+                                </div>
+                                <span class="sb-error" data-loi-cho="diaChiGiao"></span>
+                            </div>
+                            <div class="sb-note-box">
+                                <b><i class="fas fa-truck"></i> Phí vận chuyển</b>
+                                <ul>
+                                    <li>TP. Hồ Chí Minh: <span id="phiNoiThanh"></span></li>
+                                    <li>Các tỉnh/thành khác: <span id="phiTinhKhac"></span></li>
+                                    <li>Miễn phí cho đơn có tạm tính từ <span id="mienPhiTu"></span></li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <!-- PHƯƠNG THỨC THANH TOÁN -->
+                        <section class="sb-card sb-card-pad">
+                            <div class="sb-box-head"><h3>Phương thức thanh toán</h3><span class="sb-box-icon"><i class="fas fa-wallet"></i></span></div>
+                            <label class="sb-pay-option checked" for="ttCOD">
+                                <input type="radio" id="ttCOD" name="phuongThuc" value="COD" checked />
+                                <span class="ico"><i class="fas fa-money-bill-wave"></i></span>
+                                <span><strong>Thanh toán khi nhận hàng (COD)</strong><small>Kiểm tra máy rồi trả tiền mặt cho shipper</small></span>
+                            </label>
+                            <label class="sb-pay-option" for="ttQR">
+                                <input type="radio" id="ttQR" name="phuongThuc" value="QR" />
+                                <span class="ico"><i class="fas fa-qrcode"></i></span>
+                                <span><strong>Chuyển khoản bằng mã QR</strong><small>Quét bằng app ngân hàng hoặc ví điện tử; mã QR có sẵn số tiền, hiện ngay sau khi đặt</small></span>
+                            </label>
+                        </section>
+                    </div>
+
+                    <!-- TÓM TẮT ĐƠN -->
+                    <aside class="sb-card sb-card-pad sb-sticky">
+                        <div class="sb-box-head"><h3>Đơn hàng của bạn</h3><span class="sb-box-icon"><i class="fas fa-shopping-bag"></i></span></div>
+                        <div id="dsDongDon"></div>
+                        <div class="sb-field mt-3 mb-2">
+                            <label for="maGiamGia">Mã giảm giá</label>
+                            <div class="sb-coupon">
+                                <input class="sb-control" id="maGiamGia" name="maGiamGia" placeholder="Nhập mã" autocomplete="off" />
+                                <button type="button" class="sb-btn sb-btn-soft" id="btnApMa">Áp dụng</button>
+                            </div>
+                            <span class="sb-error" data-loi-cho="maGiamGia"></span>
+                            <div class="sb-coupon-msg" id="thongBaoMa" role="status"></div>
+                            <div class="sb-coupon-list" id="dsMaGoiY" aria-label="Mã đang có"></div>
+                        </div>
+                        <div class="sb-sum-row"><span>Tạm tính</span><span id="tamTinh"></span></div>
+                        <div class="sb-sum-row"><span>Phí vận chuyển</span><span id="phiShip"></span></div>
+                        <div class="sb-sum-row giam"><span>Giảm giá</span><span id="giamGia"></span></div>
+                        <div class="sb-sum-total"><span class="font-weight-bold">Tổng thanh toán</span><strong id="tongTien"></strong></div>
+                        <div class="sb-freeship mt-3" id="hopFreeship"><i class="fas fa-truck"></i> Mua thêm <b id="conThieu"></b> để được miễn phí giao hàng.</div>
+                        <button type="submit" class="sb-btn sb-btn-grad sb-btn-lg sb-btn-block mt-3" id="btnDatHang">Đặt hàng <i class="fas fa-arrow-right"></i></button>
+                        <a class="sb-btn sb-btn-soft sb-btn-block mt-2" href="gio-hang.html"><i class="fas fa-arrow-left"></i> Sửa giỏ hàng</a>
+                        <p class="text-muted text-center mt-3 mb-0" style="font-size: .78rem;">Bấm “Đặt hàng” nghĩa là bạn đồng ý với <a href="chinh-sach.html#doi-tra" target="_blank">chính sách đổi trả</a> của SmartBen.</p>
+                    </aside>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/du-lieu-mau.js"></script>
+    <script src="assets/js/kho-du-lieu.js"></script>
+    <script src="assets/js/nghiep-vu.js"></script>
+    <script src="assets/js/giao-dien.js"></script>
+    <script src="assets/js/diachi-vn.js"></script>
+    <script src="assets/js/trang/thanh-toan.js"></script>
+</body>
+</html>

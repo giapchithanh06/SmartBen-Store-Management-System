@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="SmartBen - điện thoại, máy tính bảng chính hãng giá tốt cho học sinh, sinh viên." />
+    <meta name="author" content="Giáp Chí Thanh" />
+    <title>Đăng ký - SmartBen</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body data-trang="dang-ky" data-banner="Thành viên mới" data-banner-tieu-de="Đăng ký tài khoản">
+    <!-- Header, banner, footer được chèn bởi assets/js/giao-dien.js -->
+    <main class="sb-main">
+        <div class="container">
+            <section class="sb-card sb-auth">
+                <div class="sb-auth-side" style="background-image: url('assets/img/tintuc/tintuc2.png');">
+                    <span class="sb-eyebrow">Mới tại SmartBen?</span>
+                    <h2>Tạo tài khoản miễn phí</h2>
+                    <p>Lưu địa chỉ giao hàng, xem lại lịch sử đơn và tự huỷ đơn khi chưa xử lý.</p>
+                </div>
+                <div class="sb-auth-form">
+                    <span class="sb-eyebrow"><i class="fas fa-user-plus"></i> Đăng ký</span>
+                    <h1>Tạo tài khoản</h1>
+                    <p class="text-muted">Đã có tài khoản? <a href="dang-nhap.html" class="font-weight-bold">Đăng nhập</a></p>
+                    <form id="formDangKy" novalidate>
+                        <div class="sb-field">
+                            <label for="hoTen">Họ và tên</label>
+                            <div class="sb-input-icon"><i class="far fa-user"></i>
+                                <input class="sb-control" id="hoTen" name="hoTen" placeholder="Nguyễn Văn A" autocomplete="name" data-bat-buoc="Vui lòng nhập họ tên" data-nhieu-nhat="100" />
+                            </div>
+                            <span class="sb-error" data-loi-cho="hoTen"></span>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-7 sb-field">
+                                <label for="email">Email</label>
+                                <div class="sb-input-icon"><i class="far fa-envelope"></i>
+                                    <input class="sb-control" id="email" name="email" type="email" placeholder="ban@gmail.com" autocomplete="email" data-bat-buoc="Vui lòng nhập email" data-email="Email không đúng định dạng" />
+                                </div>
+                                <span class="sb-error" data-loi-cho="email"></span>
+                            </div>
+                            <div class="col-md-5 sb-field">
+                                <label for="soDienThoai">Số điện thoại <small class="text-muted">(tuỳ chọn)</small></label>
+                                <div class="sb-input-icon"><i class="fas fa-phone"></i>
+                                    <input class="sb-control" id="soDienThoai" name="soDienThoai" placeholder="0901234567" inputmode="tel" autocomplete="tel" data-mau="^0\d{9}$" data-mau-loi="Số điện thoại phải đủ 10 chữ số và bắt đầu bằng số 0!" />
+                                </div>
+                                <span class="sb-error" data-loi-cho="soDienThoai"></span>
+                            </div>
+                        </div>
+                        <div class="sb-field">
+                            <label for="matKhau">Mật khẩu</label>
+                            <div class="sb-input-icon" style="position: relative;"><i class="fas fa-lock"></i>
+                                <input class="sb-control" id="matKhau" name="matKhau" type="password" placeholder="Ít nhất 6 ký tự" autocomplete="new-password" data-strength="doManh" data-bat-buoc="Vui lòng nhập mật khẩu" data-it-nhat="6" data-it-nhat-loi="Mật khẩu tối thiểu 6 ký tự" />
+                                <button type="button" class="sb-pass-toggle" data-toggle-pass="matKhau" aria-label="Hiện mật khẩu"><i class="far fa-eye"></i></button>
+                            </div>
+                            <div class="sb-strength" id="doManh"><span></span><span></span><span></span><span></span></div>
+                            <div class="sb-strength-text" id="doManhText">Nên dùng ít nhất 6 ký tự, có chữ hoa, chữ thường và số.</div>
+                            <span class="sb-error" data-loi-cho="matKhau"></span>
+                        </div>
+                        <div class="sb-field">
+                            <label for="xacNhanMatKhau">Xác nhận mật khẩu</label>
+                            <div class="sb-input-icon"><i class="fas fa-lock"></i>
+                                <input class="sb-control" id="xacNhanMatKhau" name="xacNhanMatKhau" type="password" placeholder="Nhập lại mật khẩu" autocomplete="new-password" data-bat-buoc="Vui lòng xác nhận mật khẩu" data-khop="matKhau" data-khop-loi="Mật khẩu xác nhận không khớp" />
+                            </div>
+                            <span class="sb-error" data-loi-cho="xacNhanMatKhau"></span>
+                        </div>
+                        <button type="submit" class="sb-btn sb-btn-grad sb-btn-lg sb-btn-block">Tạo tài khoản <i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/du-lieu-mau.js"></script>
+    <script src="assets/js/kho-du-lieu.js"></script>
+    <script src="assets/js/nghiep-vu.js"></script>
+    <script src="assets/js/giao-dien.js"></script>
+    <script src="assets/js/trang/dang-nhap.js"></script>
+</body>
+</html>

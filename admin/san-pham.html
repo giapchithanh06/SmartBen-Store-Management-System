@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="robots" content="noindex" />
+    <meta name="author" content="Giáp Chí Thanh" />
+    <title>Sản phẩm - Quản trị SmartBen</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css" />
+</head>
+<body class="ad-body" data-goc="../" data-menu="san-pham">
+    <!-- Thanh bên + thanh trên được chèn bởi assets/js/admin.js -->
+    <div id="adNoiDung">
+        <div class="ad-head">
+            <div><span class="sb-eyebrow">Kho hàng</span><h1>Danh sách sản phẩm</h1><p id="demSP"></p></div>
+            <a class="sb-btn sb-btn-grad" href="san-pham-form.html"><i class="fas fa-plus"></i> Thêm sản phẩm</a>
+        </div>
+        <section class="ad-panel">
+            <div class="ad-tabs" id="tabTinhTrang"></div>
+            <form class="ad-filter-bar" id="formLocSP" method="get" action="san-pham.html">
+                <input type="hidden" name="tinhTrang" />
+                <input type="search" class="sb-control" name="tuKhoa" placeholder="Tìm theo tên sản phẩm..." aria-label="Tìm sản phẩm" />
+                <select name="hang" class="sb-control" aria-label="Hãng"></select>
+                <button type="submit" class="sb-btn sb-btn-grad"><i class="fas fa-search"></i> Lọc</button>
+            </form>
+            <div id="bangSanPham"></div>
+        </section>
+    </div>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/du-lieu-mau.js"></script>
+    <script src="../assets/js/kho-du-lieu.js"></script>
+    <script src="../assets/js/nghiep-vu.js"></script>
+    <script src="../assets/js/giao-dien.js"></script>
+    <script src="../assets/js/admin.js"></script>
+    <script src="../assets/js/admin/san-pham.js"></script>
+</body>
+</html>

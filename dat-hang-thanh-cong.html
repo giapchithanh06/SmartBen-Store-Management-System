@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="SmartBen - điện thoại, máy tính bảng chính hãng giá tốt cho học sinh, sinh viên." />
+    <meta name="author" content="Giáp Chí Thanh" />
+    <title>Đặt hàng thành công - SmartBen</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body data-trang="dat-hang-thanh-cong" data-banner="Cảm ơn bạn" data-banner-tieu-de="Đặt hàng thành công">
+    <!-- Header, banner, footer được chèn bởi assets/js/giao-dien.js -->
+    <main class="sb-main">
+        <div class="container">
+            <div class="sb-steps">
+                <div class="sb-step xong"><span class="so"><i class="fas fa-check"></i></span><div><strong>Giỏ hàng</strong><small>Đã chọn sản phẩm</small></div></div>
+                <div class="sb-step xong"><span class="so"><i class="fas fa-check"></i></span><div><strong>Thông tin</strong><small>Đã nhập giao hàng</small></div></div>
+                <div class="sb-step hien-tai"><span class="so">3</span><div><strong>Hoàn tất</strong><small>Đơn đã được ghi nhận</small></div></div>
+            </div>
+            <div class="sb-checkout">
+                <div style="min-width: 0;">
+                    <section class="sb-card sb-card-pad text-center">
+                        <span class="sb-success-icon"><i class="fas fa-check"></i></span>
+                        <h1 class="mt-4 mb-2" style="font-size: clamp(1.6rem, 3vw, 2.2rem);" id="camOn"></h1>
+                        <p class="text-muted mb-1" id="ghiNhan"></p>
+                        <p class="text-muted" id="buocTiep"></p>
+                        <div class="d-flex justify-content-center flex-wrap mt-3" style="gap: 10px;">
+                            <a class="sb-btn sb-btn-grad" id="nutTheoDoi" href="#"><i class="fas fa-receipt"></i> Theo dõi đơn hàng</a>
+                            <a class="sb-btn sb-btn-soft" href="cua-hang.html">Tiếp tục mua sắm</a>
+                        </div>
+                    </section>
+                    <div id="khuQR"></div>
+                </div>
+                <aside class="sb-card sb-card-pad sb-sticky" id="tomTat"></aside>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/du-lieu-mau.js"></script>
+    <script src="assets/js/kho-du-lieu.js"></script>
+    <script src="assets/js/nghiep-vu.js"></script>
+    <script src="assets/js/giao-dien.js"></script>
+    <script src="assets/js/trang/don-hang.js"></script>
+</body>
+</html>

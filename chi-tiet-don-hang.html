@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="SmartBen - điện thoại, máy tính bảng chính hãng giá tốt cho học sinh, sinh viên." />
+    <meta name="author" content="Giáp Chí Thanh" />
+    <title>Chi tiết đơn hàng - SmartBen</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body data-trang="chi-tiet-don-hang" data-banner="Theo dõi đơn hàng" data-banner-tieu-de="Chi tiết đơn hàng">
+    <!-- Header, banner, footer được chèn bởi assets/js/giao-dien.js -->
+    <main class="sb-main">
+        <div class="container">
+            <nav class="sb-breadcrumb" id="duongDan" aria-label="Đường dẫn"></nav>
+            <div class="sb-checkout">
+                <div style="min-width: 0;">
+                    <section class="sb-card sb-card-pad" id="theoDoi"></section>
+                    <div id="khuQR"></div>
+                </div>
+                <aside class="sb-card sb-card-pad sb-sticky" id="tomTat"></aside>
+            </div>
+        </div>
+    </main>
+
+
+    <div class="modal fade sb-modal" id="modalHuyDon" tabindex="-1" role="dialog" aria-labelledby="tieuDeHuy" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="sb-modal-icon"><i class="fas fa-times"></i></div>
+                <h3 id="tieuDeHuy">Huỷ đơn?</h3>
+                <p id="moTaHuy"></p>
+                <div class="sb-modal-actions">
+                    <button type="button" class="sb-btn sb-btn-outline" data-dismiss="modal">Giữ đơn</button>
+                    <button type="button" class="sb-btn sb-btn-danger" id="btnXacNhanHuy">Huỷ đơn</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/du-lieu-mau.js"></script>
+    <script src="assets/js/kho-du-lieu.js"></script>
+    <script src="assets/js/nghiep-vu.js"></script>
+    <script src="assets/js/giao-dien.js"></script>
+    <script src="assets/js/trang/don-hang.js"></script>
+</body>
+</html>

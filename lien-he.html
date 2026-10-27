@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="SmartBen - điện thoại, máy tính bảng chính hãng giá tốt cho học sinh, sinh viên." />
+    <meta name="author" content="Giáp Chí Thanh" />
+    <title>Liên hệ - SmartBen</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body data-trang="lien-he">
+    <!-- Header, banner, footer được chèn bởi assets/js/giao-dien.js -->
+    <main class="sb-main">
+        <div class="container">
+            <section class="sb-card sb-page-head">
+                <div>
+                    <span class="sb-eyebrow"><i class="fas fa-headset"></i> Hỗ trợ khách hàng</span>
+                    <h1>Liên hệ SmartBen</h1>
+                    <p>Cần tư vấn chọn máy, hỏi về bảo hành hay trả góp? Gửi lời nhắn, SmartBen phản hồi trong vòng 24 giờ.</p>
+                </div>
+            </section>
+
+            <div class="sb-info-grid">
+                <div class="sb-info"><i class="fas fa-map-marker-alt"></i><h3>Cửa hàng</h3><p>140 Lê Trọng Tấn, Phường Tây Thạnh, TP. Hồ Chí Minh</p></div>
+                <div class="sb-info"><i class="fas fa-phone"></i><h3>Hotline</h3><p><span data-cau-hinh="HOTLINE"></span> (miễn phí)<br />8:00 – 21:30 mỗi ngày</p></div>
+                <div class="sb-info"><i class="fas fa-envelope"></i><h3>Email</h3><p>hotro@smartben.vn</p></div>
+            </div>
+
+            <div class="sb-checkout mt-4">
+                <section class="sb-card sb-card-pad">
+                    <div class="sb-box-head">
+                        <div><span class="sb-eyebrow">Gửi phản hồi</span><h3 class="mt-2">Để lại lời nhắn cho chúng tôi</h3></div>
+                        <span class="sb-box-icon"><i class="fas fa-paper-plane"></i></span>
+                    </div>
+                    <div class="sb-note-box mb-3" id="daGui" style="background: var(--sb-green-soft); border-left-color: var(--sb-green); color: var(--sb-green-dark); font-weight: 600;" hidden></div>
+                    <form id="formLienHe" novalidate>
+                        <div class="form-row">
+                            <div class="col-md-6 sb-field">
+                                <label for="hoTen">Họ và tên <span class="req">*</span></label>
+                                <div class="sb-input-icon"><i class="far fa-user"></i><input class="sb-control" id="hoTen" name="hoTen" placeholder="Họ và tên của bạn" autocomplete="name" data-bat-buoc="Vui lòng nhập họ tên" data-nhieu-nhat="100" /></div>
+                                <span class="sb-error" data-loi-cho="hoTen"></span>
+                            </div>
+                            <div class="col-md-6 sb-field">
+                                <label for="email">Email <span class="req">*</span></label>
+                                <div class="sb-input-icon"><i class="far fa-envelope"></i><input class="sb-control" id="email" name="email" type="email" placeholder="ban@gmail.com" autocomplete="email" data-bat-buoc="Vui lòng nhập email" data-email="Email không đúng định dạng" /></div>
+                                <span class="sb-error" data-loi-cho="email"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 sb-field">
+                                <label for="soDienThoai">Số điện thoại</label>
+                                <div class="sb-input-icon"><i class="fas fa-phone"></i><input class="sb-control" id="soDienThoai" name="soDienThoai" placeholder="0901234567" inputmode="tel" data-mau="^0\d{9}$" data-mau-loi="Số điện thoại phải đủ 10 chữ số và bắt đầu bằng số 0!" /></div>
+                                <span class="sb-error" data-loi-cho="soDienThoai"></span>
+                            </div>
+                            <div class="col-md-6 sb-field">
+                                <label for="chuDe">Chủ đề <span class="req">*</span></label>
+                                <div class="sb-input-icon"><i class="fas fa-tag"></i>
+                                    <select class="sb-control" id="chuDe" name="chuDe" data-bat-buoc="Vui lòng chọn chủ đề" style="padding-left: 42px;">
+                                        <option value="">-- Chọn chủ đề --</option>
+                                        <option>Tư vấn chọn máy</option><option>Bảo hành, sửa chữa</option><option>Đổi trả sản phẩm</option>
+                                        <option>Trả góp 0%</option><option>Đơn hàng, giao hàng</option><option>Góp ý website</option>
+                                    </select>
+                                </div>
+                                <span class="sb-error" data-loi-cho="chuDe"></span>
+                            </div>
+                        </div>
+                        <div class="sb-field">
+                            <label for="tinNhan">Tin nhắn <span class="req">*</span></label>
+                            <textarea class="sb-control" id="tinNhan" name="tinNhan" rows="5" placeholder="Nội dung bạn cần hỗ trợ..." data-bat-buoc="Vui lòng nhập nội dung tin nhắn" data-it-nhat="10" data-it-nhat-loi="Tin nhắn cần ít nhất 10 ký tự" data-nhieu-nhat="1000"></textarea>
+                            <span class="sb-error" data-loi-cho="tinNhan"></span>
+                        </div>
+                        <button type="submit" class="sb-btn sb-btn-grad sb-btn-lg"><i class="fas fa-paper-plane"></i> Gửi lời nhắn</button>
+                    </form>
+                </section>
+
+                <aside class="sb-card sb-card-pad sb-sticky">
+                    <div class="sb-box-head"><h3>Câu hỏi thường gặp</h3><span class="sb-box-icon"><i class="fas fa-question"></i></span></div>
+                    <div class="sb-prose" style="font-size: .9rem;">
+                        <p><b>Bao lâu nhận được máy?</b><br />Nội thành TP. Hồ Chí Minh 2–4 giờ; tỉnh khác 1–3 ngày làm việc.</p>
+                        <p><b>Máy lỗi thì làm sao?</b><br />Lỗi do nhà sản xuất trong 30 ngày được đổi máy mới. <a href="chinh-sach.html#doi-tra">Xem chính sách đổi trả</a>.</p>
+                        <p class="mb-0"><b>Sinh viên có ưu đãi gì?</b><br />Nhập mã <b>SINHVIEN</b> giảm 5% cho đơn từ 1 triệu, kết hợp trả góp 0%.</p>
+                    </div>
+                    <div class="mt-3" style="overflow: hidden; border-radius: var(--sb-radius); box-shadow: var(--sb-shadow);">
+                        <iframe title="Bản đồ cửa hàng SmartBen" src="https://www.google.com/maps?q=140+L%C3%AA+Tr%E1%BB%8Dng+T%E1%BA%A5n,+T%C3%A2y+Th%E1%BA%A1nh,+H%E1%BB%93+Ch%C3%AD+Minh&output=embed"
+                                width="100%" height="220" style="border: 0; display: block;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/du-lieu-mau.js"></script>
+    <script src="assets/js/kho-du-lieu.js"></script>
+    <script src="assets/js/nghiep-vu.js"></script>
+    <script src="assets/js/giao-dien.js"></script>
+    <script src="assets/js/trang/noi-dung.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="robots" content="noindex" />
+    <meta name="author" content="Giáp Chí Thanh" />
+    <title>Báo cáo doanh thu - Quản trị SmartBen</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css" />
+</head>
+<body class="ad-body" data-goc="../" data-menu="bao-cao">
+    <!-- Thanh bên + thanh trên được chèn bởi assets/js/admin.js -->
+    <div id="adNoiDung">
+        <div class="ad-head">
+            <div><span class="sb-eyebrow"><i class="fas fa-chart-line"></i> Thống kê</span><h1>Báo cáo doanh thu</h1><p>Không tính đơn đã huỷ. Số liệu tính trực tiếp từ đơn hàng đang lưu.</p></div>
+            <button type="button" class="sb-btn sb-btn-soft" id="btnXuatCSV"><i class="fas fa-file-download"></i> Xuất đơn hàng (CSV)</button>
+        </div>
+        <section class="ad-stats" id="theBaoCao"></section>
+        <section class="ad-grid">
+            <div class="ad-panel">
+                <div class="ad-panel-head"><div><span class="sb-eyebrow">Sản phẩm</span><h2>Doanh thu theo sản phẩm</h2></div></div>
+                <div class="ad-table-wrap"><table class="ad-table" id="bangDoanhThu"></table></div>
+            </div>
+            <div style="min-width: 0;">
+                <div class="ad-panel mb-4">
+                    <div class="ad-panel-head"><div><span class="sb-eyebrow">Thương hiệu</span><h2>Doanh thu theo hãng</h2></div></div>
+                    <div class="ad-table-wrap"><table class="ad-table" id="bangTheoHang"></table></div>
+                </div>
+                <div class="ad-panel mb-4">
+                    <div class="ad-panel-head"><div><span class="sb-eyebrow">Đơn hàng</span><h2>Theo trạng thái</h2></div></div>
+                    <div class="ad-table-wrap"><table class="ad-table" id="bangTrangThai"></table></div>
+                </div>
+                <div class="ad-panel" id="khoiPhuc">
+                    <div class="ad-panel-head"><div><span class="sb-eyebrow">Dữ liệu</span><h2>Dữ liệu mẫu</h2></div></div>
+                    <p class="text-muted" style="font-size: .9rem;">Dữ liệu web lưu trong trình duyệt (localStorage). Bấm khôi phục để đưa sản phẩm, tài khoản, đơn hàng, mã giảm giá, đánh giá và tin tức về trạng thái ban đầu.</p>
+                    <button type="button" class="sb-btn sb-btn-danger" id="btnKhoiPhuc"><i class="fas fa-undo-alt"></i> Khôi phục dữ liệu mẫu</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/du-lieu-mau.js"></script>
+    <script src="../assets/js/kho-du-lieu.js"></script>
+    <script src="../assets/js/nghiep-vu.js"></script>
+    <script src="../assets/js/giao-dien.js"></script>
+    <script src="../assets/js/admin.js"></script>
+    <script src="../assets/js/admin/khac.js"></script>
+</body>
+</html>

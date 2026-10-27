@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="robots" content="noindex" />
+    <meta name="author" content="Giáp Chí Thanh" />
+    <title>Tin tức - Quản trị SmartBen</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css" />
+</head>
+<body class="ad-body" data-goc="../" data-menu="tin-tuc">
+    <!-- Thanh bên + thanh trên được chèn bởi assets/js/admin.js -->
+    <div id="adNoiDung">
+        <div class="ad-head">
+            <div>
+                <a href="tin-tuc.html" class="text-muted" style="font-size: .88rem;"><i class="fas fa-arrow-left"></i> Danh sách tin tức</a>
+                <h1 id="tieuDeForm"></h1>
+                <p>Bài viết hiện ở trang Tin tức và 3 bài mới nhất hiện ở trang chủ.</p>
+            </div>
+        </div>
+        <form id="formTin" novalidate>
+            <div class="ad-form-grid">
+                <div class="ad-panel">
+                    <div class="sb-field">
+                        <label for="tieuDe">Tiêu đề <span class="req">*</span></label>
+                        <input class="sb-control" id="tieuDe" name="tieuDe" placeholder="VD: Mùa vải thiều Lục Ngạn về SmartBen" data-bat-buoc="Vui lòng nhập tiêu đề" data-it-nhat="5" data-it-nhat-loi="Tiêu đề cần ít nhất 5 ký tự" data-nhieu-nhat="200" />
+                        <span class="sb-error" data-loi-cho="tieuDe"></span>
+                    </div>
+                    <div class="sb-field">
+                        <label for="tomTat" class="d-flex justify-content-between"><span>Tóm tắt</span><small class="text-muted" id="demTomTat"></small></label>
+                        <textarea class="sb-control" id="tomTat" name="tomTat" rows="2" maxlength="300" placeholder="1–2 câu giới thiệu, hiện trên thẻ tin tức" data-nhieu-nhat="300"></textarea>
+                        <span class="sb-error" data-loi-cho="tomTat"></span>
+                    </div>
+                    <div class="sb-field mb-0">
+                        <label for="noiDung">Nội dung <span class="req">*</span></label>
+                        <textarea class="sb-control" id="noiDung" name="noiDung" rows="12" placeholder="Nội dung bài viết. Xuống dòng để tách đoạn." data-bat-buoc="Vui lòng nhập nội dung" data-it-nhat="20" data-it-nhat-loi="Nội dung cần ít nhất 20 ký tự"></textarea>
+                        <span class="sb-error" data-loi-cho="noiDung"></span>
+                    </div>
+                </div>
+                <div class="ad-panel">
+                    <label class="font-weight-bold">Ảnh đại diện</label>
+                    <div class="ad-preview" style="aspect-ratio: 16 / 10;"><img id="anhTinXemTruoc" src="" alt="Ảnh bài viết" hidden /><i class="far fa-image" id="iconTinTrong"></i></div>
+                    <div class="sb-field mt-3">
+                        <input type="file" name="fileAnh" accept="image/*" class="form-control-file" />
+                        <label for="anhCoSan" class="mt-2" style="font-size: .82rem;">Hoặc chọn ảnh có sẵn</label>
+                        <select class="sb-control" id="anhCoSan" name="anhCoSan" style="height: 42px;"></select>
+                        <button type="button" class="sb-btn sb-btn-outline sb-btn-sm mt-2" id="boAnh" hidden><i class="fas fa-times"></i> Bỏ ảnh</button>
+                    </div>
+                    <div class="sb-field">
+                        <label for="ngayDang">Ngày đăng</label>
+                        <input type="datetime-local" class="sb-control" id="ngayDang" name="ngayDang" />
+                    </div>
+                    <p class="text-muted mb-3" style="font-size: .85rem;"><i class="far fa-user"></i> Người đăng: <b id="nguoiDang"></b></p>
+                    <label class="ad-switch" for="hienThi"><input type="checkbox" id="hienThi" name="hienThi" /> Hiện trên website</label>
+                </div>
+            </div>
+            <div class="ad-form-actions">
+                <a class="sb-btn sb-btn-outline" href="tin-tuc.html">Huỷ bỏ</a>
+                <button type="submit" class="sb-btn sb-btn-grad"><i class="fas fa-paper-plane"></i> Lưu bài viết</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/du-lieu-mau.js"></script>
+    <script src="../assets/js/kho-du-lieu.js"></script>
+    <script src="../assets/js/nghiep-vu.js"></script>
+    <script src="../assets/js/giao-dien.js"></script>
+    <script src="../assets/js/admin.js"></script>
+    <script src="../assets/js/admin/tin-tuc.js"></script>
+</body>
+</html>

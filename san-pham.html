@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="SmartBen - điện thoại, máy tính bảng chính hãng giá tốt cho học sinh, sinh viên." />
+    <meta name="author" content="Giáp Chí Thanh" />
+    <title>Chi tiết sản phẩm - SmartBen</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body data-trang="san-pham">
+    <!-- Header, banner, footer được chèn bởi assets/js/giao-dien.js -->
+    <main class="sb-main">
+        <div class="container">
+            <nav class="sb-breadcrumb" id="duongDan" aria-label="Đường dẫn"></nav>
+
+            <!-- 1. ẢNH + THÔNG TIN MUA -->
+            <section class="sb-card sb-detail">
+                <div>
+                    <div class="sb-gallery-main">
+                        <img id="anhChinh" alt="" />
+                        <span id="nhanAnh"></span>
+                    </div>
+                    <div class="sb-thumbs" id="thuVienAnh"></div>
+                </div>
+                <div class="sb-detail-info">
+                    <div class="sb-detail-top" id="dauThongTin"></div>
+                    <h1 id="tenSP"></h1>
+                    <div class="d-flex align-items-center flex-wrap mb-2" style="gap: 12px; font-size: .88rem;" id="dongDanhGia"></div>
+                    <div class="sb-detail-price" id="giaSP"></div>
+                    <div class="sb-mini-specs" id="thongSoNhanh"></div>
+                    <div class="sb-promo-box" id="hopKhuyenMai"></div>
+
+                    <form id="formMua" novalidate>
+                        <div class="sb-qty-box">
+                            <div><strong>Số lượng</strong><small id="ghiChuSoLuong"></small></div>
+                            <div class="sb-qty" data-qty>
+                                <button type="button" data-step="-1" aria-label="Giảm">−</button>
+                                <input type="number" name="soLuong" id="soLuong" value="1" min="1" aria-label="Số lượng" />
+                                <button type="button" data-step="1" aria-label="Tăng">+</button>
+                            </div>
+                        </div>
+                        <div class="sb-buy-row">
+                            <button type="submit" name="muaNgay" class="sb-btn sb-btn-grad sb-btn-lg">Mua ngay <i class="fas fa-arrow-right"></i></button>
+                            <button type="submit" name="themGio" class="sb-btn sb-btn-soft sb-btn-lg"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</button>
+                        </div>
+                        <div class="d-flex flex-wrap mt-3" style="gap: 10px;">
+                            <button type="button" class="sb-btn sb-btn-outline sb-btn-sm" id="nutYeuThich"><i class="far fa-heart"></i> Yêu thích</button>
+                            <button type="button" class="sb-btn sb-btn-outline sb-btn-sm" id="nutSoSanh"><i class="fas fa-balance-scale"></i> So sánh</button>
+                        </div>
+                    </form>
+
+                    <ul class="sb-promise">
+                        <li><i class="fas fa-certificate"></i> Hàng chính hãng, đầy đủ hộp và phụ kiện</li>
+                        <li><i class="fas fa-shield-alt"></i> Bảo hành 12 tháng tại trung tâm hãng</li>
+                        <li><i class="fas fa-undo-alt"></i> Lỗi do nhà sản xuất: đổi máy mới trong 30 ngày</li>
+                        <li><i class="fas fa-shipping-fast"></i> Miễn phí giao hàng cho đơn từ <span data-cau-hinh="MIEN_PHI_TU"></span></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 2. TAB MÔ TẢ / THÔNG SỐ / ĐÁNH GIÁ -->
+            <section class="sb-card sb-tabs mt-4 reveal" id="khuTab">
+                <ul class="nav" role="tablist">
+                    <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#tabThongSo" role="tab">Thông số kỹ thuật</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tabMoTa" role="tab">Mô tả</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tabDanhGia" role="tab" id="linkDanhGia">Đánh giá</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="tabThongSo" role="tabpanel"><table class="sb-spec" id="bangThongSo"></table></div>
+                    <div class="tab-pane fade" id="tabMoTa" role="tabpanel"><p class="mb-0" style="white-space: pre-line;" id="tabMoTaNoiDung"></p></div>
+                    <div class="tab-pane fade" id="tabDanhGia" role="tabpanel">
+                        <div class="sb-review-sum" id="tongDanhGia"></div>
+                        <div id="dsDanhGia"></div>
+                        <div class="mt-4" id="khuVietDanhGia">
+                            <h3 style="font-size: 1.15rem;">Viết đánh giá của bạn</h3>
+                            <div class="sb-note-box" id="ghiChuDanhGia" hidden></div>
+                            <form id="formDanhGia" novalidate hidden>
+                                <div class="sb-field">
+                                    <label>Bạn chấm mấy sao? <span class="req">*</span></label>
+                                    <div><div class="sb-star-input">
+                                        <input type="radio" name="sao" id="sao5" value="5" data-bat-buoc="Vui lòng chọn số sao" /><label for="sao5" title="5 sao"><i class="fas fa-star"></i></label>
+                                        <input type="radio" name="sao" id="sao4" value="4" /><label for="sao4" title="4 sao"><i class="fas fa-star"></i></label>
+                                        <input type="radio" name="sao" id="sao3" value="3" /><label for="sao3" title="3 sao"><i class="fas fa-star"></i></label>
+                                        <input type="radio" name="sao" id="sao2" value="2" /><label for="sao2" title="2 sao"><i class="fas fa-star"></i></label>
+                                        <input type="radio" name="sao" id="sao1" value="1" /><label for="sao1" title="1 sao"><i class="fas fa-star"></i></label>
+                                    </div></div>
+                                    <span class="sb-error" data-loi-cho="sao"></span>
+                                </div>
+                                <div class="sb-field">
+                                    <label for="noiDungDanhGia">Nhận xét <span class="req">*</span></label>
+                                    <textarea class="sb-control" id="noiDungDanhGia" name="noiDung" rows="3" placeholder="Máy dùng có mượt không, pin thế nào, camera ra sao..." data-bat-buoc="Vui lòng nhập nhận xét" data-it-nhat="10" data-it-nhat-loi="Nhận xét cần ít nhất 10 ký tự" data-nhieu-nhat="500"></textarea>
+                                    <span class="sb-error" data-loi-cho="noiDung"></span>
+                                </div>
+                                <button type="submit" class="sb-btn sb-btn-grad"><i class="fas fa-paper-plane"></i> Gửi đánh giá</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. SẢN PHẨM TƯƠNG TỰ -->
+            <section class="sb-section reveal" id="khuLienQuan">
+                <div class="sb-section-head">
+                    <div><span class="sb-eyebrow">Gợi ý cho bạn</span><h2>Sản phẩm cùng tầm giá</h2></div>
+                    <a class="sb-btn sb-btn-grad" id="xemCungHang" href="cua-hang.html">Xem cùng hãng</a>
+                </div>
+                <div class="sb-products" id="dsLienQuan"></div>
+            </section>
+        </div>
+    </main>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/du-lieu-mau.js"></script>
+    <script src="assets/js/kho-du-lieu.js"></script>
+    <script src="assets/js/nghiep-vu.js"></script>
+    <script src="assets/js/giao-dien.js"></script>
+    <script src="assets/js/trang/san-pham.js"></script>
+</body>
+</html>
